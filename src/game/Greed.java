@@ -1,18 +1,24 @@
 package game;
 
+import java.util.List;
+
 import user.Player;
 
 public interface Greed {
 	
 	int getCurrentRoundNumber();
-	int getRoundsLeft();
 	
 	int getNumberOfPlayers();
 	int getPlayerPostion(Player p);
 	int getPlayerScore(Player p);
+	void setPlayers(List<Player> pList);
+	
 	int[] getScoreboard();
+
+//	int getRoundsLeft();
+//	boolean isGameOver();
 	
-	void addPlayerListener(Player p);
+	int getCurrentDiceScore();
 	
-	int getDiceScore();
+	void runGame();
 }
