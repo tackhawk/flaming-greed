@@ -24,11 +24,11 @@ public class MainGame {
 		userIn = scan.nextLine();
 		int numPlayers = Integer.parseInt(userIn);
 		
+//		List<Players> playerList = generatePlayers(numPlayers);
+		
 		System.out.print("How many rounds? ");
 		userIn = scan.nextLine();
 		Integer.parseInt(userIn);
-		
-		scan.close();
 		
 		game.runGame();
 	}
@@ -38,10 +38,10 @@ public class MainGame {
 		
 		switch(gType) {
 			case GREED_DEFAULT:
-				return new GreedGame();
+				return new GreedGame(null);
 			default :
 				System.out.println("Input not recognized: using default");
-				return new GreedGame();
+				return new GreedGame(null);
 		}
 	}
 }
