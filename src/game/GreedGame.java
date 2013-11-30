@@ -146,16 +146,16 @@ public class GreedGame implements Greed {
 			diceUsed = 0;
 			for( int j=1; j<=6; j++ ) {
 				if (j != 1 && j != 5 ) {
-					score += ((diceCount[j-1] - straightCount) / 3) * j * 100;
-					diceUsed += ((diceCount[j-1] - straightCount) / 3);
+					score += ((diceCount[j-1] - i) / 3) * j * 100;
+					diceUsed += ((diceCount[j-1] - i) / 3);
 				} else if ( j==1 ) {
-					score += ((diceCount[j-1] - straightCount) / 3) * 1000;
-					score += ((diceCount[j-1] - straightCount) % 3) * 100;				
-					diceUsed += (diceCount[j-1] - straightCount);
+					score += ((diceCount[j-1] - i) / 3) * 1000;
+					score += ((diceCount[j-1] - i) % 3) * 100;				
+					diceUsed += (diceCount[j-1] - i);
 				} else if ( j==5 ) {
-					score += ((diceCount[j-1] - straightCount) / 3) * 1500;
-					score += ((diceCount[j-1] - straightCount) % 3) * 50;
-					diceUsed += (diceCount[j-1] - straightCount);
+					score += ((diceCount[j-1] - i) / 3) * 1500;
+					score += ((diceCount[j-1] - i) % 3) * 50;
+					diceUsed += (diceCount[j-1] - i);
 				}
 			}
 			score += straightCount * 1000;
