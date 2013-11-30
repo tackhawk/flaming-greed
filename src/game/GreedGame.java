@@ -158,8 +158,8 @@ public class GreedGame implements Greed {
 					diceUsed += (diceCount[j-1] - i);
 				}
 			}
-			score += straightCount * 1000;
-			diceUsed += straightCount * 6;
+			score += i * 1000;
+			diceUsed += i * 6;
 			
 			if( score != 0 ) {
 				possibleScores.add(new PairDiceScore(diceUsed, score));
