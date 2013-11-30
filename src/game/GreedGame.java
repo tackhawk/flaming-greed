@@ -124,6 +124,15 @@ public class GreedGame implements Greed {
 			diceCount[i-1] = 0;
 		}
 		
+		//Counting the number of dice by die number (1-6)
+		for( int i=1; i<=6; i++ ) {
+			for( int j=0; j<diceRolled.length; j++ ) {
+				if( diceRolled[j] == i) {
+					diceCount[i-1]++;
+				}
+			}
+		}
+		
 		//Evaluating the number of straights possible to use
 		int straightCount = diceCount[0];
 		
