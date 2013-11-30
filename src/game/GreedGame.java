@@ -64,8 +64,9 @@ public class GreedGame implements Greed {
 				}
 				
 				do {
-					List<PairDiceScore> possibleScores = getCurrentDiceScore(rollDice(diceToRoll));
-					System.out.println(rollDice(diceToRoll)[0]);
+					int[] diceRolled = rollDice(diceToRoll);
+					List<PairDiceScore> possibleScores = getCurrentDiceScore(diceRolled);
+
 					int scoreIndex = 0;
 					
 					if (possibleScores.isEmpty()) {
