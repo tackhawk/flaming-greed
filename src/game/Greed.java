@@ -11,7 +11,6 @@ public interface Greed {
 	int getNumberOfPlayers();
 	int getPlayerPostion(Player p);
 	int getPlayerScore(Player p);
-	void setPlayers(List<Player> pList);
 	
 	int[] getScoreboard();
 
