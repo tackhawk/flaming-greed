@@ -1,15 +1,24 @@
 package user;
 
+import java.util.List;
+
 import game.Greed;
+import game.PairDiceScore;
 
 public class NeverRollAgain implements Player {
-
-	public boolean takePreviousRoll(Greed greed) {
+	@Override
+	public boolean continuePreviousRoll(Greed greed) {
 		return false;
 	}
 
-	public boolean rollAgain(Greed greed) {
+	@Override
+	public boolean passDice(Greed greed) {
 		return false;
+	}
+
+	@Override
+	public int chooseRollIndex(List<PairDiceScore> scoreList) {
+		return 0;
 	}
 
 }

@@ -3,6 +3,9 @@ import game.*;
 
 
 public interface Player {
-	public boolean takePreviousRoll(Greed greed);
-	public boolean rollAgain(Greed greed);
+	public boolean continuePreviousRoll(Greed greed);
+	
+	public boolean passDice(Greed greed);
+	
+	public int chooseRollIndex(java.util.List<PairDiceScore> scoreList);
 }
