@@ -149,11 +149,11 @@ public class GreedGame implements Greed {
 					score += ((diceCount[j-1] - straightCount) / 3) * j * 100;
 					diceUsed += ((diceCount[j-1] - straightCount) / 3);
 				} else if ( j==1 ) {
-					score += ((diceCount[j-1] - straightCount) / 3) * j * 1000;
+					score += ((diceCount[j-1] - straightCount) / 3) * 1000;
 					score += ((diceCount[j-1] - straightCount) % 3) * 100;				
 					diceUsed += (diceCount[j-1] - straightCount);
 				} else if ( j==5 ) {
-					score += ((diceCount[j-1] - straightCount) / 3) * j * 1500;
+					score += ((diceCount[j-1] - straightCount) / 3) * 1500;
 					score += ((diceCount[j-1] - straightCount) % 3) * 50;
 					diceUsed += (diceCount[j-1] - straightCount);
 				}
