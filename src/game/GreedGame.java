@@ -52,6 +52,7 @@ public class GreedGame implements Greed {
 	@Override
 	public void runGame() {
 		scoreboard = new int[getNumberOfPlayers()];
+		diceToRoll = totalDice;
 		
 		for (roundNumber=0 ; roundNumber < maxRounds; roundNumber++) {
 			for (int i=0; i<players.size(); i++) {
