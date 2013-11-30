@@ -18,7 +18,7 @@ public interface Greed {
 //	int getRoundsLeft();
 //	boolean isGameOver();
 	
-	int getCurrentDiceScore();
+	List<PairDiceScore> getCurrentDiceScore(int[] diceRolled);
 	
 	void runGame();
 }

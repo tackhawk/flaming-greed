@@ -67,8 +67,8 @@ public class GreedGame implements Greed {
 		}
 	}
 	
-	@Override
 	// Returns diceRemaining (key) and scores (value) associated, returns empty map if no score
+	@Override
 	public List<PairDiceScore> getCurrentDiceScore(int[] diceRolled) {
 		
 		List<PairDiceScore> possibleScores = new ArrayList<PairDiceScore>();
