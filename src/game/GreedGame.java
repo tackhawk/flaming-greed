@@ -65,6 +65,7 @@ public class GreedGame implements Greed {
 				
 				do {
 					List<PairDiceScore> possibleScores = getCurrentDiceScore(rollDice(diceToRoll));
+					System.out.println(rollDice(diceToRoll)[0]);
 					int scoreIndex = 0;
 					
 					if (possibleScores.isEmpty()) {
@@ -133,17 +134,17 @@ public class GreedGame implements Greed {
 			score = 0;
 			diceUsed = 0;
 			for( int j=1; j<=6; j++ ) {
-				if (i != 1 && i != 5 ) {
-					score += ((diceCount[i-1] - straightCount) / 3) * i * 100;
-					diceUsed += ((diceCount[i-1] - straightCount) / 3);
-				} else if ( i==1 ) {
-					score += ((diceCount[i-1] - straightCount) / 3) * i * 1000;
-					score += ((diceCount[i-1] - straightCount) % 3) * 100;				
-					diceUsed += (diceCount[i-1] - straightCount);
-				} else if ( i==5 ) {
-					score += ((diceCount[i-1] - straightCount) / 3) * i * 1500;
-					score += ((diceCount[i-1] - straightCount) % 3) * 50;
-					diceUsed += (diceCount[i-1] - straightCount);
+				if (j != 1 && j != 5 ) {
+					score += ((diceCount[j-1] - straightCount) / 3) * j * 100;
+					diceUsed += ((diceCount[j-1] - straightCount) / 3);
+				} else if ( j==1 ) {
+					score += ((diceCount[j-1] - straightCount) / 3) * j * 1000;
+					score += ((diceCount[j-1] - straightCount) % 3) * 100;				
+					diceUsed += (diceCount[j-1] - straightCount);
+				} else if ( j==5 ) {
+					score += ((diceCount[j-1] - straightCount) / 3) * j * 1500;
+					score += ((diceCount[j-1] - straightCount) % 3) * 50;
+					diceUsed += (diceCount[j-1] - straightCount);
 				}
 			}
 			score += straightCount * 1000;
