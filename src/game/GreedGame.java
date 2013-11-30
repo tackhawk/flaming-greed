@@ -110,6 +110,50 @@ public class GreedGame implements Greed {
 	
 	@Override
 	public List<PairDiceScore> getCurrentDiceScore(int[] diceRolled) {
-		return null;
+		
+		List<PairDiceScore> possibleScores = new ArrayList<PairDiceScore>();
+		int score = 0;
+		int diceUsed = 0;
+		int [] diceCount = new int[6];
+		
+		//Initializing array to contain the dice count
+		for( int i=1; i<=6; i++ ) {
+			diceCount[i-1] = 0;
+		}
+		
+		//Evaluating the number of straights possible to use
+		int straightCount = diceCount[0];
+		
+		for( int i=1; i<=6; i++) {
+			straightCount = ( straightCount > diceCount[i-1] ) ? diceCount[i-1] :  straightCount;
+		}
+		
+		//Evaluating scores for each valid number of straights
+		for( int i=0; i<=straightCount; i++) {
+			score = 0;
+			diceUsed = 0;
+			for( int j=1; j<=6; j++ ) {
+				if (i != 1 && i != 5 ) {
+					score += ((diceCount[i-1] - straightCount) / 3) * i * 100;
+					diceUsed += ((diceCount[i-1] - straightCount) / 3);
+				} else if ( i==1 ) {
+					score += ((diceCount[i-1] - straightCount) / 3) * i * 1000;
+					score += ((diceCount[i-1] - straightCount) % 3) * 100;				
+					diceUsed += (diceCount[i-1] - straightCount);
+				} else if ( i==5 ) {
+					score += ((diceCount[i-1] - straightCount) / 3) * i * 1500;
+					score += ((diceCount[i-1] - straightCount) % 3) * 50;
+					diceUsed += (diceCount[i-1] - straightCount);
+				}
+			}
+			score += straightCount * 1000;
+			diceUsed += straightCount * 6;
+			
+			if( score != 0 ) {
+				possibleScores.add(new PairDiceScore(diceUsed, score));
+			}
+		}
+		
+		return possibleScores;
 	}
 }
