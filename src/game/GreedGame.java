@@ -147,7 +147,7 @@ public class GreedGame implements Greed {
 			for( int j=1; j<=6; j++ ) {
 				if (j != 1 && j != 5 ) {
 					score += ((diceCount[j-1] - i) / 3) * j * 100;
-					diceUsed += ((diceCount[j-1] - i) / 3);
+					diceUsed += ((diceCount[j-1] - i) / 3) * 3;
 				} else if ( j==1 ) {
 					score += ((diceCount[j-1] - i) / 3) * 1000;
 					score += ((diceCount[j-1] - i) % 3) * 100;				
